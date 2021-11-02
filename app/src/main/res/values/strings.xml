@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Morpion</string>
+    <string name="mainActitity_title">SuperMorpion</string>
+    <string name="mainActivity_joueur1">Joueur 1</string>
+    <string name="mainActivity_joueur2">Joueur 2</string>
+    <string name="mainActivity_joueurPseudo">Pseudo</string>
+    <string name="mainActivity_joueurHint"></string>
+    <string name="mainActivity_jouer">Jouer</string>
+    <string name="mainActivity_boutonPhoto">Photo</string>
+    <string name="plateauActivity_encours">Partie en cours...</string>
+    <string name="plateauActivity_tour">Au tour de joueur1 de jouer !</string>
+    <string name="plateauActivity_retour">Menu (fin de partie)</string>
+    <string name="scoreboardActivity_tableaudesscores">Tableau des scores :</string>
+    <string name="scoreboardActivity_defaites">Défaites</string>
+    <string name="scoreboardActivity_victoires">Victoires</string>
+    <string name="scoreboardActivity_pseudo">Pseudo</string>
+    <string name="scoreboardActivity_Resultat">result</string>
+    <string name="scoreboardActivity_nuls">Nuls</string>
+    <string name="scoreboardActivity_findepartie">Fin de partie !</string>
+    <string name="scoreboardActivite_buttonRejouer">Rejouer</string>
+    <string name="scoreboardActivity_buttonMenuPrincipal">Menu principal</string>
+</resources>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/mainActitity_title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:paddingTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="7dp">
+
+            <TextView
+                android:id="@+id/mainActivity_player1textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mainActivity_joueur1"
+                android:textAlignment="center" />
+
+            <Spinner
+                android:id="@+id/mainActivity_player1spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mainActivity_joueurPseudo" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/mainActivity_player1name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/mainActivity_joueurHint"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/mainactivity_player1selectphoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0"
+                android:gravity="center_horizontal"
+                android:text="@string/mainActivity_boutonPhoto"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <ImageView
+                android:id="@+id/mainActivity_player1Photo"
+                android:layout_width="match_parent"
+                android:layout_height="171dp"
+                android:contentDescription=""
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="7dp">
+
+            <TextView
+                android:id="@+id/mainActivity_player2textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mainActivity_joueur2"
+                android:textAlignment="center" />
+
+            <Spinner
+                android:id="@+id/mainActivity_player2spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/mainActivity_joueur2Pseudo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mainActivity_joueurPseudo" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/mainActivity_player2name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/mainActivity_joueurHint" />
+
+            <Button
+                android:id="@+id/mainactivity_player2selectphoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:text="@string/mainActivity_boutonPhoto" />
+
+            <ImageView
+                android:id="@+id/mainActivity_player2Photo"
+                android:layout_width="match_parent"
+                android:layout_height="171dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Spinner
+            android:id="@+id/mainActivity_tailleGrille"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:minHeight="48dp" />
+
+        <Button
+            android:id="@+id/mainActivity_buttonPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="25dp"
+            android:text="@string/mainActivity_jouer" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

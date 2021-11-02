@@ -147,6 +147,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+        <TextView
+            android:id="@+id/mainActivity_gridsize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/taille_de_la_grille" />
+
         <Spinner
             android:id="@+id/mainActivity_tailleGrille"
             android:layout_width="wrap_content"

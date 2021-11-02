@@ -19,4 +19,5 @@
     <string name="scoreboardActivity_findepartie">Fin de partie !</string>
     <string name="scoreboardActivite_buttonRejouer">Rejouer</string>
     <string name="scoreboardActivity_buttonMenuPrincipal">Menu principal</string>
+    <string name="taille_de_la_grille">Taille de la grille :</string>
 </resources>

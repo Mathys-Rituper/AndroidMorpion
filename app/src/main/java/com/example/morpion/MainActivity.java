@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     static final int REQUEST_IMAGE_CAPTURE_1 = 1;
     static final int REQUEST_IMAGE_CAPTURE_2 = 2;
 
-    //BUTTONS
+    //VIEWS
     private Spinner spinnerPlayer1;
     private Spinner spinnerPlayer2;
     private EditText editTextNamePlayer1;
@@ -102,8 +102,6 @@ public class MainActivity extends AppCompatActivity {
         adaptersize.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sizeSpinner.setAdapter(adaptersize);
 
-        //TODO : listener play
-
         spinnerPlayer1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -125,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                 if (spinnerPlayer2.getSelectedItem().toString() != "Choisir un joueur...") {
                     player2 = app.getPlayers().get(spinnerPlayer2.getSelectedItem().toString());
                     editTextNamePlayer2.setText(player2.getName());
-                    imagePlayer1.setImageBitmap(base64ToBitmap(player2.getBase64image()));
+                    imagePlayer2.setImageBitmap(base64ToBitmap(player2.getBase64image()));
                 }
             }
             @Override
@@ -200,7 +198,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 if (player1!=null && player2!=null){
+                    Toast.makeText(MainActivity.this,"Création de la partie",Toast.LENGTH_SHORT).show();
                     app.setGame(new Partie(gridSize,player1,player2));
+                    Toast.makeText(MainActivity.this,"Partie créée",Toast.LENGTH_SHORT).show();
                     Intent toPlateau = new Intent(MainActivity.this, PlateauActivity.class);
                     startActivity(toPlateau);
                 }

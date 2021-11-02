@@ -3,7 +3,7 @@ package com.example.morpion.model;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
+//TODO : add and link database
 
 @Entity
 public class User {

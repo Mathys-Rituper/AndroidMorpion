@@ -26,12 +26,14 @@ public class Partie {
     }
 
     public int jouerCoup(Integer c) {
-        //Return codes : 0 = not over, 1 = current player a gagné, 2 = c'est plein
-        if (this.currentPlayer == this.player1) {
-            this.grid.set(c, 1);
-        } else {
-            this.grid.set(c, 2);
-        }
+        //Return codes : 0 = not over, 1 = current player a gagné, 2 = c'est plein, 3 = erreur
+        if (c < grid.size() * grid.size() && grid.get(c) == 0){
+
+            if (this.currentPlayer == this.player1) {
+                this.grid.set(c, 1);
+            } else {
+                this.grid.set(c, 2);
+            }
         if (checkLigneForWin(c) || checkColumnForWin(c) || checkDiagonals()) {
             finPartieNonNulle(currentPlayer);
             return 1;
@@ -39,7 +41,9 @@ public class Partie {
             finPartieNulle();
             return 2;
         } else return 0;
+    } else return 3;
     }
+
 
     public void nextPlayer(){
         if (this.currentPlayer==this.player1){
@@ -116,7 +120,7 @@ public class Partie {
 
     private boolean isFull(){
         for (int i = 0; i<taille * taille; i++){
-            if (i ==0) return false;
+            if (grid.get(i) ==0) return false;
         }
         return true;
     }
@@ -137,4 +141,35 @@ public class Partie {
     }
 
 
+    public User getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public void setCurrentPlayer(User currentPlayer) {
+        this.currentPlayer = currentPlayer;
+    }
+
+    public User getWinner() {
+        return winner;
+    }
+
+    public void setWinner(User winner) {
+        this.winner = winner;
+    }
+
+    public int getTaille() {
+        return taille;
+    }
+
+    public ArrayList<Integer> getGrid() {
+        return grid;
+    }
+
+    public User getPlayer1() {
+        return player1;
+    }
+
+    public User getPlayer2() {
+        return player2;
+    }
 }

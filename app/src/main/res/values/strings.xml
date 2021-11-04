@@ -4,6 +4,7 @@
     <string name="mainActivity_joueur1">Joueur 1</string>
     <string name="mainActivity_joueur2">Joueur 2</string>
     <string name="mainActivity_joueurPseudo">Pseudo</string>
+    <string name="mainActivity_joueurHint">Choix du joueur...</string>
     <string name="mainActivity_jouer">Jouer</string>
     <string name="mainActivity_boutonPhoto">Photo</string>
     <string name="plateauActivity_encours">Partie en cours...</string>

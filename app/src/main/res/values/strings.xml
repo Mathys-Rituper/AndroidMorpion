@@ -4,7 +4,6 @@
     <string name="mainActivity_joueur1">Joueur 1</string>
     <string name="mainActivity_joueur2">Joueur 2</string>
     <string name="mainActivity_joueurPseudo">Pseudo</string>
-    <string name="mainActivity_joueurHint"></string>
     <string name="mainActivity_jouer">Jouer</string>
     <string name="mainActivity_boutonPhoto">Photo</string>
     <string name="plateauActivity_encours">Partie en cours...</string>
@@ -13,7 +12,7 @@
     <string name="scoreboardActivity_tableaudesscores">Tableau des scores :</string>
     <string name="scoreboardActivity_defaites">Défaites</string>
     <string name="scoreboardActivity_victoires">Victoires</string>
-    <string name="scoreboardActivity_pseudo">Pseudo</string>
+    <string name="scoreboardActivity_pseudo">Pseudo (victoires/égalités/défaites)</string>
     <string name="scoreboardActivity_Resultat">result</string>
     <string name="scoreboardActivity_nuls">Nuls</string>
     <string name="scoreboardActivity_findepartie">Fin de partie !</string>

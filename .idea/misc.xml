@@ -6,11 +6,13 @@
         <entry key="..\:/Users/Mathys/StudioProjects/AndroidMorpion/app/src/main/res/drawable/emptyButton_background.xml" value="0.3828125" />
         <entry key="..\:/Users/Mathys/StudioProjects/AndroidMorpion/app/src/main/res/drawable/emptybutton_background.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/Mathys/StudioProjects/AndroidMorpion/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22135416666666666" />
-        <entry key="..\:/Users/Mathys/StudioProjects/AndroidMorpion/app/src/main/res/layout-land/activity_main.xml" value="0.12604166666666666" />
+        <entry key="..\:/Users/Mathys/StudioProjects/AndroidMorpion/app/src/main/res/layout-land/activity_main.xml" value="0.67" />
         <entry key="..\:/Users/Mathys/StudioProjects/AndroidMorpion/app/src/main/res/layout-land/activity_plateau.xml" value="0.31040564373897706" />
+        <entry key="..\:/Users/Mathys/StudioProjects/AndroidMorpion/app/src/main/res/layout-land/activity_scoreboard.xml" value="0.31040564373897706" />
         <entry key="..\:/Users/Mathys/StudioProjects/AndroidMorpion/app/src/main/res/layout/activity_main.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/Mathys/StudioProjects/AndroidMorpion/app/src/main/res/layout/activity_plateau.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Mathys/StudioProjects/AndroidMorpion/app/src/main/res/layout/activity_scoreboard.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Mathys/StudioProjects/AndroidMorpion/app/src/main/res/layout/playerscore.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Mathys/StudioProjects/AndroidMorpion/app/src/main/res/mipmap-anydpi-v26/emptyButton.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/Mathys/StudioProjects/AndroidMorpion/app/src/main/res/mipmap-anydpi-v26/emptyButton_round.xml" value="0.22135416666666666" />
       </map>

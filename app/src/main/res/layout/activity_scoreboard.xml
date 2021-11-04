@@ -45,42 +45,12 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="43dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="40dp"
         android:text="@string/scoreboardActivity_pseudo"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:text="@string/scoreboardActivity_victoires"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toTopOf="@+id/textView8" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:text="@string/scoreboardActivity_defaites"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toTopOf="@+id/textView9" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:text="@string/scoreboardActivity_nuls"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toTopOf="@+id/textView10" />
 
     <ListView
         android:id="@+id/scoreboardActivity_listview"
@@ -109,12 +79,14 @@
             android:id="@+id/scoreboardActibity_buttonReplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/scoreboardActivite_buttonRejouer" />
+            android:text="@string/scoreboardActivite_buttonRejouer"
+            style="?android:attr/buttonBarButtonStyle" />
 
         <Button
             android:id="@+id/scoreboardActivity_buttonMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/scoreboardActivity_buttonMenuPrincipal" />
+            android:text="@string/scoreboardActivity_buttonMenuPrincipal"
+            style="?android:attr/buttonBarButtonStyle" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

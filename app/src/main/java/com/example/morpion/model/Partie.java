@@ -38,6 +38,7 @@ public class Partie {
             finPartieNonNulle(currentPlayer);
             return 1;
         } else if (isFull()) {
+
             finPartieNulle();
             return 2;
         } else return 0;
@@ -46,10 +47,10 @@ public class Partie {
 
 
     public void nextPlayer(){
-        if (this.currentPlayer==this.player1){
-            this.currentPlayer=this.player2;
+        if (currentPlayer==player1){
+            currentPlayer=player2;
         } else {
-            this.currentPlayer = this.player1;
+            currentPlayer = player1;
         }
     }
 
@@ -63,7 +64,7 @@ public class Partie {
         }
 
         for (int i = firstIndexOfLine;i<firstIndexOfLine+this.taille;i++){
-            if (grid.get(i)!=(Integer) player_int){
+            if (!grid.get(i).equals((Integer) player_int)){
                 // si une des cases de la ligne n'est pas détenue par le joueur courant, il n'a pas gagné
                 return false;
             }
@@ -72,7 +73,6 @@ public class Partie {
         //si toutes les cases de la ligne sont détenues par le joueur courant, il a gagné
         return true;
     }
-
     private boolean checkColumnForWin(Integer c){
         int firstIndexOfColumn = c % taille;
         int player_int;
@@ -83,7 +83,7 @@ public class Partie {
         }
 
         for (int i = firstIndexOfColumn;i<taille * taille;i = i+ taille){
-            if (grid.get(i)!=(Integer) player_int){
+            if (!grid.get(i).equals((Integer) player_int)){
                 // si une des cases de la ligne n'est pas détenue par le joueur courant, il n'a pas gagné
                 return false;
             }
@@ -101,21 +101,24 @@ public class Partie {
         }
 
         //diagonale du haut à gauche vers le bas à droite
-        for (int i = 0; i<taille *taille; i = i + ((taille + 1))){
-            if (grid.get(i)!=(Integer) player_int){
+        boolean topleft = true;
+        for (int i = 0; i<taille *taille; i = i + (taille + 1) ){
+            if (!grid.get(i).equals((Integer) player_int)){
                 // si une des cases de la ligne n'est pas détenue par le joueur courant, il n'a pas gagné
-                return false;
+                    topleft = false;
             }
         }
 
         //diagonale du haut à droite vers le bas à gauche
-        for (int i = taille - 1; i<taille *taille; i = i + ((taille -1 ))){
-            if (grid.get(i)!=(Integer) player_int){
+        boolean topright = true;
+        for (int i = taille - 1; i<taille *taille-1; i = i + ((taille -1 ))){
+            if (!grid.get(i).equals((Integer) player_int)){
+
                 // si une des cases de la ligne n'est pas détenue par le joueur courant, il n'a pas gagné
-                return false;
+                topright=false;
             }
         }
-        return true;
+        return topleft || topright;
     }
 
     private boolean isFull(){
@@ -126,16 +129,19 @@ public class Partie {
     }
 
     private void finPartieNonNulle(User winner){
+
         this.winner = winner;
         winner.setVictories(winner.getVictories()+1);
-        if (winner == player1) {
+        if (this.winner.equals(player1)) {
             player2.setDefeats(player2.getDefeats()+1);
         } else {
             player1.setDefeats(player1.getDefeats()+1);
         }
+
     }
 
     private void finPartieNulle() {
+        winner=null;
         this.player1.setTies(this.player1.getTies()+1);
         this.player2.setTies(this.player2.getTies()+1);
     }

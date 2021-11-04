@@ -10,7 +10,9 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaCodec;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Base64;
 import android.util.TypedValue;
 import android.view.View;
@@ -21,7 +23,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.morpion.db.DatabaseClient;
 import com.example.morpion.model.ApplicationMorpion;
+import com.example.morpion.model.User;
 
 import java.util.ArrayList;
 
@@ -31,6 +35,7 @@ public class PlateauActivity extends AppCompatActivity {
     private Button buttonToMenu;
     private LinearLayout linearLayoutGame;
     private ArrayList<ImageButton> buttons;
+    private DatabaseClient db;
 
 
     @Override
@@ -44,6 +49,7 @@ public class PlateauActivity extends AppCompatActivity {
         buttons = new ArrayList<>();
 
         ApplicationMorpion app =(ApplicationMorpion) getApplicationContext();
+        db = DatabaseClient.getInstance(getApplicationContext());
 
         textViewStatus.setText("Construction du plateau de taille " + app.getGame().getTaille());
 
@@ -63,6 +69,8 @@ public class PlateauActivity extends AppCompatActivity {
                 ImageButton ib = new ImageButton(this);
 
                 ib.setBackgroundResource(R.drawable.emptybutton);
+
+                //getting a proper layout with this is literally the most busted thing ever in this project, dark magic was required to achieve proper button sizing
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                         toDp(60),toDp(60)
                 );
@@ -101,9 +109,20 @@ public class PlateauActivity extends AppCompatActivity {
                 b.setClickable(false);
 
                 if (res == 1 || res == 2) { //partie terminée : grille pleine ou match nul
+
+                    //mise à jour des scores dans la bd en fin de partie
+                    updateUser(app.getGame().getPlayer1());
+                    updateUser(app.getGame().getPlayer2());
+
+                    //on attend que la bd se mette à jour avec les nouveaux scores modifiés par le modèle Partie
+                    try {
+                        Thread.sleep(800); //
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
                     Intent toScoreboard = new Intent(PlateauActivity.this, ScoreboardActivity.class);
                     startActivity(toScoreboard);
-
                     finish();
                 }else {
                     app.getGame().nextPlayer();
@@ -126,5 +145,19 @@ public class PlateauActivity extends AppCompatActivity {
                 dp,
                 r.getDisplayMetrics()
         );
+    }
+
+    public void updateUser(User user){
+        class UpdateTask extends AsyncTask<Void, Void, User> {
+            @Override
+            protected User doInBackground(Void... voids) {
+                db.getAppDatabase().userDao().update(user);
+
+                return user;
+            }
+        }
+
+        UpdateTask ut = new UpdateTask();
+        ut.execute();
     }
 }
